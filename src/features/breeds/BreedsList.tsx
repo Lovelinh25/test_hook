@@ -24,14 +24,29 @@ const BreedsList: React.FC = () => {
     return <div>Error: {error}</div>;
   }
 
+  console.log(breeds);
+
   return (
     <div>
       <h1>Breeds List</h1>
-      <ul>
-        {breeds.map((breed) => (
-          <li key={breed.id}>{breed.name}</li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {breeds.map((breed) => (
+            <tr key={breed.id}>
+              <td>{breed.id}</td>
+              <td>{breed.attributes.name}</td>
+              <td>{breed.attributes.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

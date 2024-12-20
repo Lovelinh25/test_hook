@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 interface Breed {
+  attributes: any;
   id: number;
   name: string;
   // Các thuộc tính khác của giống chó
